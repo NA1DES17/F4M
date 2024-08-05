@@ -1,0 +1,95 @@
+:root {
+  --buttonNo: #ff5252;
+  --buttonYes: #4caf50;
+  --bgcTarjeta: #faebd7;
+  --borderTarjeta: #c3fcf2;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 95vw;
+  height: 95vh;
+  max-width: 700px;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  border: solid 2.3px var(--borderTarjeta);
+  margin-top: 10px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+#botonGatito {
+  border: none;
+  border-radius: 50%;
+  width: 50vw;
+  height: 50vw;
+  background-image: url(Un\ lindo\ gatito.png);
+  background-size: cover;
+  max-width: 300px;
+  max-height: 300px;
+}
+#botonGatito:hover {
+  transform: scale(1.1);
+  box-shadow: 7px 7px 2px 0px rgba(0, 0, 0, 0.75);
+}
+h1,
+h3 {
+  margin-bottom: 17px;
+  font-family: "Margarine", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.respuestas {
+  display: flex;
+  flex-direction: row;
+}
+.texto {
+  box-shadow: 11px 12px 24px 1px rgba(204, 138, 204, 1);
+  background: whitesmoke;
+  font-size: 20px;
+  border-radius: 15px;
+  text-align: center;
+  padding: 5px;
+}
+#pregunta {
+  margin-top: 10px;
+  background: white;
+  border-radius: 15px;
+  padding: 5px;
+  border: ridge;
+}
+#si,
+#no {
+  margin: 5px;
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  background-color: var(--buttonNo);
+  justify-content: center;
+  align-items: center;
+}
+#si:hover,
+#no:hover {
+  transform: scale(1.2);
+}
+#si {
+  background-color: var(--buttonYes);
+}
+.return {
+  border: none;
+  background-color: rgba(218, 100, 182, 0.447);
+  border-radius: 5px;
+  margin: 15px;
+}
