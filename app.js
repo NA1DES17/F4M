@@ -7,6 +7,7 @@ const paragraph = document.querySelectorAll("p"); //[texto, pregunta]
 
 //Fecha Actual
 const hoy = new Date();
+// const hoy = new Date(2024, 7, 7, 13, 16);
 const dia = hoy.getDate();
 const mes = hoy.getMonth() + 1;
 const anio = hoy.getFullYear();
@@ -67,9 +68,15 @@ buttons[3].addEventListener("click", () => {
 });
 
 //Funciones
-function cantMeses() {
+/*function cantMeses() {
   return Math.floor(difEnMiliSeg / (1000 * 60 * 60 * 24) / 30);
+}*/
+function cantMeses() {
+  const diffInYears = hoy.getFullYear() - loveDay.getFullYear();
+  const diffInMonths = diffInYears * 12 + (hoy.getMonth() - loveDay.getMonth());
+  return diffInMonths;
 }
+
 function cantDias() {
   const difEnDias = Math.floor(difEnMiliSeg / (1000 * 60 * 60 * 24));
   return `Llevamos ${difEnDias} dias siendo novios`;
@@ -85,10 +92,16 @@ function cantMin() {
 //-------------
 function segundaPantalla() {
   //Mostrar primeros elementos
-  if (dia === "7") {
-    paragraph.innerHTML = `Hoy ${dia}/${mes}/${anio} cumplimos ${cantMeses()} meses de novios ❤️`;
-  } else {
-    texto.innerHTML = `Hoy ${dia}/${mes}/${anio} llevamos ${cantMeses()} meses y un poco más de novios ❤️`;
+  if (hoy.getDate() === 7) {
+    paragraph[0].innerHTML = `Hoy ${dia}/${mes}/${anio} cumplimos ${cantMeses()} meses de novios ❤️`;
+  }
+  if (hoy.getDate() > 7) {
+    paragraph[0].innerHTML = `Hoy ${dia}/${mes}/${anio} llevamos ${cantMeses()} meses y un poco más de novios ❤️`;
+  }
+  if (hoy.getDate() < 7) {
+    paragraph[0].innerHTML = `Hoy ${dia}/${mes}/${anio} llevamos ${
+      cantMeses() - 1
+    } meses y un poco más de novios ❤️`;
   }
   paragraph.forEach((p) => {
     p.style.display = "flex";
